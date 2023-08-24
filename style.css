@@ -1,0 +1,31 @@
+/*
+
+Colors:
+#040D12 (Black)
+#183D3D (Dark Green)
+#5C8374 (Mid green)
+#93B1A6 (Light Green)
+#FAF0E6 (Creamy White)
+
+*/
+
+body {
+    font-family: Helvetica, sans-serif;
+    color: #FAF0E6;
+    background-color: #183D3D;
+}
+
+#headerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+}
+
+#cookieContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
