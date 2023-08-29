@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Clicker</title>
+    <title>Totally Real Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="headerContainer">
-        <h1 id="title">Cookie Clicker</h1>
-        <h2 id="score">Score: 0</h2>
+    <div id="header" class="header"></div>
+    <div class="calculatorBody">
+        <div id="display" class="display">0</div>
+        <button onclick="clearDisplay()" class="button">C</button>
+        <button onclick="negative()" class="button">+/-</button>
+        <button onclick="percent()" class="button">%</button>
+        <button onclick="divide()" class="button orange">÷</button>
+        <button onclick="numberInput('7')" class="button">7</button>
+        <button onclick="numberInput('8')" class="button">8</button>
+        <button onclick="numberInput('9')" class="button">9</button>
+        <button onclick="multiply()" class="button orange">x</button>
+        <button onclick="numberInput('4')" class="button">4</button>
+        <button onclick="numberInput('5')" class="button">5</button>
+        <button onclick="numberInput('6')" class="button">6</button>
+        <button onclick="subtract()" class="button orange">-</button>
+        <button onclick="numberInput('1')" class="button">1</button>
+        <button onclick="numberInput('2')" class="button">2</button>
+        <button onclick="numberInput('3')" class="button">3</button>
+        <button onclick="add()" class="button orange">+</button>
+        <button onclick="numberInput('0')" class="button zero">0</button>
+        <button onclick="decimal()" class="button">.</button>
+        <button onclick="calculate()" class="button orange">=</button>
     </div>
-    <div id="cookieContainer">
-        <button id="cookieButton" onclick="addCookie()">Click Cookie</button>
-    </div>
-
+    <!-- Use JS to add button here after 10 second that will be able to activate party mode. -->
 
     <script src="index.js"></script>
 </body>
