@@ -1,0 +1,7 @@
+{
+    "insultForCalculation" : ["Survey says to figure this out on your own.", "Good luck.", "Why do you keep asking me to do these things?", "Really? You couldn't figure that one out?", "You should reconsider some things.", "No."],
+    "insultForRepeatedOperators" : ["I can only do so much.", "Too much math. That's boring.", "You don't need my help.", "How about you multiply those grades you got and what do you get? Zero, you get zero because 0 * 0 is 0. Screw you, go do your homework."],
+    "insultForSingleInput" : ["YOU NEED TO USE BOTH NUMBERS! IT'S NOT THAT HARD!!!", "You would think most people know how to properly use a calculator.", "Really? Only one number?", "You need to fill it out?", "Really? Can't even use a calculator?", "It's really not that hard to fill out bro."],
+    "insultsForPartyMode" : ["You're not invited to the party loser.", "No losers allowed at the party.", "Did you think you were really invited?"],
+    "insultsForNegativity" : ["Always negative, try being happy for once. Maybe try touching some grass or something.", "Why so negative? Even I'm not this bad.", "Wow you must be really grounded to be this negative."]
+}

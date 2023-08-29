@@ -3,7 +3,9 @@ let selected = 1;
 let second = 0;
 let numberIsInt = true;
 let mode;
+let randomIndex;
 let negativity = false;
+let partyActivated = false;
 
 let header = document.querySelector("#header")
 let display = document.querySelector("#display");
@@ -28,6 +30,24 @@ function numberInput(number) {
     }
 }
 
+function activatePartyMode() {
+    if (partyActivated) {
+        return;
+    }
+    partyActivated = true;
+    const partyButton = document.createElement("button");
+    const text = document.createTextNode("Party Mode");
+    partyButton.appendChild(text);
+
+    partyButton.classList.add("party");
+    partyButton.addEventListener("click", () => {
+        party();
+    })
+
+    const body = document.querySelector("body");
+    body.appendChild(partyButton);
+}
+
 function clearDisplay() {
     console.log("Cleared!");
     header.innerHTML = "";
@@ -35,10 +55,13 @@ function clearDisplay() {
     first = 0;
     second = 0;
     display.innerHTML = first;
+    activatePartyMode();
 }
 
 function negative() {
-    header.innerHTML = "Always negative, try being happy for once. Maybe try touching some grass or something."
+    let negativityInsultList = obj["insultsForNegativity"];
+    randomIndex = Math.floor(Math.random() * negativityInsultList.length);
+    header.innerHTML = negativityInsultList[randomIndex];
     negativity = !negativity;
     if (negativity) {
         if (selected === 1) {
@@ -61,7 +84,9 @@ function negative() {
 }
 
 function percent() {
-    header.innerHTML = "No.";
+    let operatorsInsultList = obj["insultsForRepeatedOperators"];
+    randomIndex = Math.floor(Math.random() * operatorsInsultList.length);
+    header.innerHTML = operatorsInsultList[randomIndex];
 }
 
 function divide() {
@@ -70,7 +95,9 @@ function divide() {
         mode = "division";
         display.innerHTML = second;
     } else {
-        header.innerHTML = "I can only do so much.";
+        let operatorsInsultList = obj["insultsForRepeatedOperators"];
+        randomIndex = Math.floor(Math.random() * operatorsInsultList.length);
+        header.innerHTML = operatorsInsultList[randomIndex];
     }
 }
 
@@ -80,7 +107,9 @@ function multiply() {
         mode = "multiplication";
         display.innerHTML = second;
     } else {
-        header.innerHTML = "Too much math. That's boring.";
+        let operatorsInsultList = obj["insultsForRepeatedOperators"];
+        randomIndex = Math.floor(Math.random() * operatorsInsultList.length);
+        header.innerHTML = operatorsInsultList[randomIndex];
     }
 }
 
@@ -90,7 +119,9 @@ function subtract() {
         mode = "subtraction";
         display.innerHTML = second;
     } else {
-        header.innerHTML = "You're already low enough.";
+        let operatorsInsultList = obj["insultsForRepeatedOperators"];
+        randomIndex = Math.floor(Math.random() * operatorsInsultList.length);
+        header.innerHTML = operatorsInsultList[randomIndex];
     }
 }
 
@@ -100,7 +131,9 @@ function add() {
         mode = "addition";
         display.innerHTML = second;
     } else {
-        header.innerHTML = "You don't need to add more than that.";
+        let operatorsInsultList = obj["insultsForRepeatedOperators"];
+        randomIndex = Math.floor(Math.random() * operatorsInsultList.length);
+        header.innerHTML = operatorsInsultList[randomIndex];
     }
 }
 
@@ -128,14 +161,20 @@ function decimal() {
 
 function calculate() {
     if (first && second) {
-        if (mode === "multiplication") {
-            header.innerHTML = "How about you multiply those grades and what do you get? Zero, you get zero because 0 * 0 is 0. Screw you, go do your homework.";
-        } else {
-            header.innerHTML = "Survey says you should figure this one out on your own.";
-        }
+        let calculateInsultList = obj["insultsForCalculation"];
+        randomIndex = Math.floor(Math.random() * calculateInsultList.length);
+        header.innerHTML = calculateInsultList[randomIndex];
     } else {
-        header.innerHTML = "YOU NEED TO USE BOTH NUMBERS NUMB NUTS!!!";
+        let singleInsultList = obj["insultsForSingleInput"];
+        randomIndex = Math.floor(Math.random() * singleInsultList.length);
+        header.innerHTML = singleInsultList[randomIndex];
     }
+}
+
+function party() {
+    let partyInsultList = obj["insultsForPartyMode"];
+    randomIndex = Math.floor(Math.random() * InsultList.length);
+    header.innerHTML = partyInsultList[randomIndex];
 }
 
 let choice = Math.floor(Math.random() * (10 - 0));
